@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>温湿度展示</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    h1 {
+      color: #333333;
+    }
+
+    .data-container {
+      display: inline-block;
+      margin: 20px;
+      padding: 10px;
+      border-radius: 8px;
+      background-color: #ffffff;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .data-label {
+      font-size: 18px;
+      color: #666666;
+      margin-bottom: 5px;
+    }
+
+    .data-value {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333333;
+    }
+  </style>
+  <script>
+    function updateData() {
+      // 模拟获取温湿度数据（随机数）
+      var temperature = Math.floor(Math.random() * 100);
+      var humidity = Math.floor(Math.random() * 100);
+
+      // 更新页面上的温湿度数据
+      document.getElementById("temperature").innerHTML = temperature + "°C";
+      document.getElementById("humidity").innerHTML = humidity + "%";
+    }
+
+    // 每秒钟更新一次数据
+    setInterval(updateData, 1000);
+  </script>
+</head>
+<body>
+  <h1>温湿度展示</h1>
+  <div class="data-container">
+    <div class="data-label">温度</div>
+    <div id="temperature" class="data-value"></div>
+  </div>
+  <div class="data-container">
+    <div class="data-label">湿度</div>
+    <div id="humidity" class="data-value"></div>
+  </div>
+</body>
+</html>
